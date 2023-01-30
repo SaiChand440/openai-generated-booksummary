@@ -6,6 +6,8 @@ export default function Home() {
   const [animalInput, setAnimalInput] = useState("");
   const [result, setResult] = useState();
 
+  console.log("result",result);
+
   async function onSubmit(event) {
     event.preventDefault();
     try {
@@ -21,6 +23,8 @@ export default function Home() {
       if (response.status !== 200) {
         throw data.error || new Error(`Request failed with status ${response.status}`);
       }
+
+      console.log("data",data);
 
       setResult(data.result);
       setAnimalInput("");
